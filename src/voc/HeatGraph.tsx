@@ -132,67 +132,52 @@ export default function HeatGraph({ data }: Props) {
           height={420}
         >
           {/* stage sections */}
-{data.stages.map((stage, index) => {
-  const previousStages = data.stages
-    .slice(0, index)
-    .reduce(
-      (acc, curr) =>
-        acc + curr.nodes.length,
-      0,
-    );
+          {data.stages.map((stage, index) => {
+            const previousStages = data.stages
+              .slice(0, index)
+              .reduce((acc, curr) => acc + curr.nodes.length, 0);
 
-  const startNodeIndex =
-    previousStages;
+            const startNodeIndex = previousStages;
 
-  const endNodeIndex =
-    previousStages +
-    stage.nodes.length -
-    1;
+            const endNodeIndex = previousStages + stage.nodes.length - 1;
 
-  const startX =
-    positionedNodes[startNodeIndex]
-      ?.x || 0;
+            const startX = positionedNodes[startNodeIndex]?.x || 0;
 
-  const endX =
-    positionedNodes[endNodeIndex]
-      ?.x || 0;
+            const endX = positionedNodes[endNodeIndex]?.x || 0;
 
-  const centerX =
-    (startX + endX) / 2;
+            const centerX = (startX + endX) / 2;
 
-  const separatorX =
-    endX + spacingX / 2;
+            const separatorX = endX + spacingX / 2;
 
-  return (
-    <g key={stage.stage_name}>
-      {/* stage title */}
-      <text
-        x={centerX}
-        y={30}
-        textAnchor="middle"
-        fontSize="14"
-        fontWeight="700"
-        fill="#374151"
-      >
-        {stage.stage_name}
-      </text>
+            return (
+              <g key={stage.stage_name}>
+                {/* stage title */}
+                <text
+                  x={centerX}
+                  y={30}
+                  textAnchor="middle"
+                  fontSize="14"
+                  fontWeight="700"
+                  fill="#374151"
+                >
+                  {stage.stage_name}
+                </text>
 
-      {/* separator */}
-      {index !==
-        data.stages.length - 1 && (
-        <line
-          x1={separatorX}
-          y1="50"
-          x2={separatorX}
-          y2="460"
-          stroke="#d1d5db"
-          strokeDasharray="6 6"
-          strokeWidth={2}
-        />
-      )}
-    </g>
-  );
-})}
+                {/* separator */}
+                {index !== data.stages.length - 1 && (
+                  <line
+                    x1={separatorX}
+                    y1="50"
+                    x2={separatorX}
+                    y2="460"
+                    stroke="#d1d5db"
+                    strokeDasharray="6 6"
+                    strokeWidth={2}
+                  />
+                )}
+              </g>
+            );
+          })}
 
           {/* links */}
           {links.map((link, i) => {
@@ -235,7 +220,7 @@ export default function HeatGraph({ data }: Props) {
                   fill="#475569"
                   fontWeight="600"
                 >
-                  {link.users} users
+                  {link.users}% users
                 </text>
               </g>
             );
