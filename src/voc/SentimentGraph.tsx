@@ -118,11 +118,11 @@ export default function net_sentimentGraph({
       </div>
 
       {/* Chart */}
-      <div className="w-full h-[calc(100%-80px)]">
+      <div className="w-full h-[calc(100%-90px)]">
         <ResponsiveContainer>
           <AreaChart
             data={data}
-            margin={{ top: 24, right: 20, left: -18, bottom: 10 }}
+            margin={{ top: 26, right: 20, left: -18, bottom: 10 }}
           >
             <CartesianGrid
               strokeDasharray="4 4"

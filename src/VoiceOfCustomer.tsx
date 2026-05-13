@@ -13,422 +13,423 @@ import ChatBox from "./voc/ChatBox";
 
 const VoiceOfCustomer = () => {
   const data = {
-    created_at: "2026-05-07T21:55:00Z",
-    comments: [
-      {
-        comment_id: "c_5001",
-        comment_text:
-          "The branching at the 'Main Dashboard' confirms users are migrating from 'Reporting' to 'Advanced Analytics' since the v2.4 update.",
-        comment_author: "pintu ji",
-        comment_timestamp: "2026-05-07T20:15:00Z",
-        comment_is_flagged: false,
-        comment_is_deleted: false,
-      },
-      {
-        comment_id: "c_5002",
-        comment_text:
-          "We should investigate the 'neutral' sentiment for the 'CSV Importer' silence metric. It suggests it works, but isn't delighting anyone.",
-        comment_author: "artic (Tech Lead)",
-        comment_timestamp: "2026-05-07T21:10:00Z",
-        comment_is_flagged: false,
-      },
-    ],
     dashboard: {
+      companies: {
+        "COMP-EST-01": {
+          company_id: "COMP-EST-01",
+          company_name: "The Esthetics Clinical Care Center",
+          products: {
+            "PROD-EST-01": {
+              product_id: "PROD-EST-01",
+              product_name: "Aesthetic & Surgical Services",
+              data: {
+                sentiment_velocity: [
+                  {
+                    month_year: "Aug 2025",
+                    net_sentiment: 100.0,
+                  },
+                  {
+                    month_year: "Sep 2025",
+                    net_sentiment: 50.0,
+                  },
+                  {
+                    month_year: "Oct 2025",
+                    net_sentiment: 100.0,
+                  },
+                  {
+                    month_year: "Nov 2025",
+                    net_sentiment: 100.0,
+                  },
+                  {
+                    month_year: "Dec 2025",
+                    net_sentiment: 100.0,
+                  },
+                ],
+                journey_heatmap: {
+                  stages: [
+                    {
+                      stage_name: "Initial Contact",
+                      nodes: ["step1"],
+                    },
+                    {
+                      stage_name: "Clinical Engagement",
+                      nodes: ["step2", "step3"],
+                    },
+                    {
+                      stage_name: "Recovery & Support",
+                      nodes: ["step4"],
+                    },
+                  ],
+                  journey: {
+                    order: ["step1", "step2", "step3", "step4"],
+                    nodes: {
+                      step1: {
+                        _id: "step1",
+                        step_name: "Booking/Inquiry",
+                        x: 120,
+                        y: 180,
+                        links: {
+                          step2: {
+                            source_id: "step1",
+                            target_id: "step2",
+                            user_traffic: 100,
+                            sentiment_intensity: {
+                              positive: 0.8,
+                              negative: 0.1,
+                              neutral: 0.1,
+                            },
+                            insight_label: "High Conversion",
+                          },
+                        },
+                      },
+                      step2: {
+                        _id: "step2",
+                        step_name: "Consultation (Dr. Prachi)",
+                        x: 380,
+                        y: 190,
+                        links: {
+                          step3: {
+                            source_id: "step2",
+                            target_id: "step3",
+                            user_traffic: 85,
+                            sentiment_intensity: {
+                              positive: 0.9,
+                              negative: 0.05,
+                              neutral: 0.05,
+                            },
+                            insight_label: "Excellent Feedback",
+                          },
+                        },
+                      },
+                      step3: {
+                        _id: "step3",
+                        step_name: "Treatment Execution",
+                        x: 680,
+                        y: 170,
+                        links: {
+                          step4: {
+                            source_id: "step3",
+                            target_id: "step4",
+                            user_traffic: 80,
+                            sentiment_intensity: {
+                              positive: 0.85,
+                              negative: 0.05,
+                              neutral: 0.1,
+                            },
+                            insight_label: "Sincere approach",
+                          },
+                        },
+                      },
+                      step4: {
+                        _id: "step4",
+                        step_name: "Post-Care Follow-up",
+                        x: 980,
+                        y: 180,
+                        insight_label: "Loyal Customers",
+                        links: {},
+                      },
+                    },
+                  },
+                },
+                silence_metrics: [
+                  {
+                    feature_name: "Other",
+                    feedback_frequency: "high",
+                    satisfication_level: "positive",
+                  },
+                  {
+                    feature_name: "Facial implants",
+                    feedback_frequency: "low",
+                    satisfication_level: "positive",
+                  },
+                ],
+                issues_metrics: [
+                  {
+                    issue_id: "ISSUE-001",
+                    title: "Wait Time Feedback",
+                    status: "resolved",
+                    send_custom_email: false,
+                  },
+                  {
+                    issue_id: "ISSUE-002",
+                    title: "Treatment Clarification",
+                    status: "in_progress",
+                    send_custom_email: false,
+                  },
+                ],
+                key_insights: [
+                  {
+                    insight_name: "Doctor Empathy",
+                    insight_description:
+                      "Patients consistently highlight Dr. Prachi's empathetic and attentive approach during consultations.",
+                  },
+                  {
+                    insight_name: "Trust & Professionalism",
+                    insight_description:
+                      "Reviews emphasize the sincere and trustworthy nature of the skin treatments provided.",
+                  },
+                ],
+                voc_digest:
+                  "The Esthetics Clinical Care Center in Pune, led by Dr. Prachi Chhindam, shows exceptionally high patient satisfaction (Net Sentiment ~100%). Patients value the personalized care at Goodwill Square Mall clinic. Feedback suggests high trust in facio-maxillary and cosmetic procedures.",
+              },
+            },
+          },
+          data: {
+            sentiment_velocity: [
+              {
+                month_year: "Aug 2025",
+                net_sentiment: 100.0,
+              },
+              {
+                month_year: "Sep 2025",
+                net_sentiment: 50.0,
+              },
+              {
+                month_year: "Oct 2025",
+                net_sentiment: 100.0,
+              },
+              {
+                month_year: "Nov 2025",
+                net_sentiment: 100.0,
+              },
+              {
+                month_year: "Dec 2025",
+                net_sentiment: 100.0,
+              },
+            ],
+            journey_heatmap: {
+              stages: [
+                {
+                  stage_name: "Initial Contact",
+                  nodes: ["step1"],
+                },
+                {
+                  stage_name: "Clinical Engagement",
+                  nodes: ["step2", "step3"],
+                },
+                {
+                  stage_name: "Recovery & Support",
+                  nodes: ["step4"],
+                },
+              ],
+              journey: {
+                order: ["step1", "step2", "step3", "step4"],
+                nodes: {
+                  step1: {
+                    _id: "step1",
+                    step_name: "Booking/Inquiry",
+                    x: 10,
+                    y: 50,
+                    insight_label: "High Conversion",
+                    links: {
+                      step2: {
+                        source_id: "step1",
+                        target_id: "step2",
+                        user_traffic: 100,
+                        sentiment_intensity: {
+                          positive: 0.8,
+                          negative: 0.1,
+                          neutral: 0.1,
+                        },
+                      },
+                    },
+                  },
+                  step2: {
+                    _id: "step2",
+                    step_name: "Consultation (Dr. Prachi)",
+                    x: 30,
+                    y: 50,
+                    insight_label: "Excellent Feedback",
+                    links: {
+                      step3: {
+                        source_id: "step2",
+                        target_id: "step3",
+                        user_traffic: 85,
+                        sentiment_intensity: {
+                          positive: 0.9,
+                          negative: 0.05,
+                          neutral: 0.05,
+                        },
+                      },
+                    },
+                  },
+                  step3: {
+                    _id: "step3",
+                    step_name: "Treatment Execution",
+                    x: 60,
+                    y: 50,
+                    insight_label: "Sincere approach",
+                    links: {
+                      step4: {
+                        source_id: "step3",
+                        target_id: "step4",
+                        user_traffic: 80,
+                        sentiment_intensity: {
+                          positive: 0.85,
+                          negative: 0.05,
+                          neutral: 0.1,
+                        },
+                      },
+                    },
+                  },
+                  step4: {
+                    _id: "step4",
+                    step_name: "Post-Care Follow-up",
+                    x: 90,
+                    y: 50,
+                    insight_label: "Loyal Customers",
+                    links: {},
+                  },
+                },
+              },
+            },
+            silence_metrics: [
+              {
+                feature_name: "Other",
+                feedback_frequency: "high",
+                satisfication_level: "positive",
+              },
+              {
+                feature_name: "Facial implants",
+                feedback_frequency: "low",
+                satisfication_level: "positive",
+              },
+            ],
+            issues_metrics: [
+              {
+                issue_id: "ISSUE-001",
+                title: "Wait Time Feedback",
+                status: "resolved",
+                send_custom_email: false,
+              },
+              {
+                issue_id: "ISSUE-002",
+                title: "Treatment Clarification",
+                status: "in_progress",
+                send_custom_email: false,
+              },
+            ],
+            key_insights: [
+              {
+                insight_name: "Doctor Empathy",
+                insight_description:
+                  "Patients consistently highlight Dr. Prachi's empathetic and attentive approach during consultations.",
+              },
+              {
+                insight_name: "Trust & Professionalism",
+                insight_description:
+                  "Reviews emphasize the sincere and trustworthy nature of the skin treatments provided.",
+              },
+            ],
+            voc_digest:
+              "The Esthetics Clinical Care Center in Pune, led by Dr. Prachi Chhindam, shows exceptionally high patient satisfaction (Net Sentiment ~100%). Patients value the personalized care at Goodwill Square Mall clinic. Feedback suggests high trust in facio-maxillary and cosmetic procedures.",
+          },
+        },
+      },
       data: {
         sentiment_velocity: [
           {
-            month_year: "Jun 2025",
-            net_sentiment: -4.0,
-          },
-          {
-            month_year: "Jul 2025",
-            net_sentiment: 12.5,
-          },
-          {
             month_year: "Aug 2025",
-            net_sentiment: -32.0,
+            net_sentiment: 100.0,
           },
           {
             month_year: "Sep 2025",
-            net_sentiment: -5.0,
+            net_sentiment: 50.0,
           },
           {
             month_year: "Oct 2025",
-            net_sentiment: 18.2,
+            net_sentiment: 100.0,
           },
           {
             month_year: "Nov 2025",
-            net_sentiment: 45.0,
+            net_sentiment: 100.0,
           },
           {
             month_year: "Dec 2025",
-            net_sentiment: 2.0,
-          },
-          {
-            month_year: "Jan 2026",
-            net_sentiment: -8.5,
-          },
-          {
-            month_year: "Feb 2026",
-            net_sentiment: 12.1,
-          },
-          {
-            month_year: "Mar 2026",
-            net_sentiment: -14.3,
-          },
-          {
-            month_year: "Apr 2026",
-            net_sentiment: 25.6,
-          },
-          {
-            month_year: "May 2026",
-            net_sentiment: 38.9,
+            net_sentiment: 100.0,
           },
         ],
         journey_heatmap: {
           stages: [
             {
-              stage_name: "Onboarding",
-              nodes: [
-                "nd_welcome",
-                "nd_help",
-                "nd_verify",
-                "nd_tour",
-                "nd_skip_tour",
-              ],
+              stage_name: "Initial Contact",
+              nodes: ["step1"],
             },
-
             {
-              stage_name: "Setup",
-              nodes: ["nd_profile", "nd_config", "nd_templates", "nd_api_keys"],
+              stage_name: "Clinical Engagement",
+              nodes: ["step2", "step3"],
             },
-
             {
-              stage_name: "Daily Use",
-              nodes: [
-                "nd_dash",
-                "nd_reporting",
-                "nd_ai",
-                "nd_settings",
-                "nd_export",
-              ],
+              stage_name: "Recovery & Support",
+              nodes: ["step4"],
             },
           ],
           journey: {
-            order: [
-              "nd_welcome",
-              "nd_help",
-              "nd_verify",
-              "nd_tour",
-              "nd_skip_tour",
-              "nd_profile",
-              "nd_config",
-              "nd_templates",
-              "nd_api_keys",
-              "nd_dash",
-              "nd_reporting",
-              "nd_ai",
-              "nd_settings",
-              "nd_export",
-            ],
+            order: ["step1", "step2", "step3", "step4"],
             nodes: {
-              nd_welcome: {
-                _id: "nd_welcome",
-                step_name: "Welcome Screen",
-                x: 80,
-                y: 180,
+              step1: {
+                _id: "step1",
+                step_name: "Booking/Inquiry",
+                x: 10,
+                y: 50,
+                insight_label: "High Conversion",
                 links: {
-                  nd_verify: {
-                    source_id: "nd_welcome",
-                    target_id: "nd_verify",
-                    user_traffic: 62000,
+                  step2: {
+                    source_id: "step1",
+                    target_id: "step2",
+                    user_traffic: 100,
                     sentiment_intensity: {
-                      positive: 0.88,
-                      negative: 0.02,
+                      positive: 0.8,
+                      negative: 0.1,
                       neutral: 0.1,
                     },
-                    insight_label: "High interest landing",
-                  },
-                  nd_help: {
-                    source_id: "nd_welcome",
-                    target_id: "nd_help",
-                    user_traffic: 8000,
-                    sentiment_intensity: {
-                      positive: 0.45,
-                      negative: 0.25,
-                      neutral: 0.3,
-                    },
-                    insight_label: "Users exploring onboarding help",
                   },
                 },
               },
-
-              nd_help: {
-                _id: "nd_help",
-                step_name: "Help Center",
-                x: 260,
-                y: 80,
+              step2: {
+                _id: "step2",
+                step_name: "Consultation (Dr. Prachi)",
+                x: 30,
+                y: 50,
+                insight_label: "Excellent Feedback",
                 links: {
-                  nd_verify: {
-                    source_id: "nd_help",
-                    target_id: "nd_verify",
-                    user_traffic: 6200,
-                    sentiment_intensity: {
-                      positive: 0.55,
-                      negative: 0.12,
-                      neutral: 0.33,
-                    },
-                    insight_label: "Recovered onboarding flow",
-                  },
-                },
-              },
-
-              nd_verify: {
-                _id: "nd_verify",
-                step_name: "SSO Verification",
-                x: 260,
-                y: 180,
-                links: {
-                  nd_tour: {
-                    source_id: "nd_verify",
-                    target_id: "nd_tour",
-                    user_traffic: 48000,
-                    sentiment_intensity: {
-                      positive: 0.55,
-                      negative: 0.15,
-                      neutral: 0.3,
-                    },
-                    insight_label: "Standard auth drop-off",
-                  },
-
-                  nd_skip_tour: {
-                    source_id: "nd_verify",
-                    target_id: "nd_skip_tour",
-                    user_traffic: 12000,
-                    sentiment_intensity: {
-                      positive: 0.82,
-                      negative: 0.04,
-                      neutral: 0.14,
-                    },
-                    insight_label: "Power users skipping walkthrough",
-                  },
-                },
-              },
-
-              nd_tour: {
-                _id: "nd_tour",
-                step_name: "Interactive Tour",
-                x: 500,
-                y: 140,
-                insight_label: "Friction Point",
-                links: {
-                  nd_profile: {
-                    source_id: "nd_tour",
-                    target_id: "nd_profile",
-                    user_traffic: 22000,
-                    sentiment_intensity: {
-                      positive: 0.12,
-                      negative: 0.75,
-                      neutral: 0.13,
-                    },
-                    insight_label: "Tour is perceived as too lengthy",
-                  },
-                },
-              },
-
-              nd_skip_tour: {
-                _id: "nd_skip_tour",
-                step_name: "Skip Walkthrough",
-                x: 500,
-                y: 260,
-                links: {
-                  nd_profile: {
-                    source_id: "nd_skip_tour",
-                    target_id: "nd_profile",
-                    user_traffic: 10000,
-                    sentiment_intensity: {
-                      positive: 0.88,
-                      negative: 0.02,
-                      neutral: 0.1,
-                    },
-                    insight_label: "Experienced users moving faster",
-                  },
-                },
-              },
-
-              nd_profile: {
-                _id: "nd_profile",
-                step_name: "Profile Setup",
-                x: 760,
-                y: 180,
-                links: {
-                  nd_config: {
-                    source_id: "nd_profile",
-                    target_id: "nd_config",
-                    user_traffic: 20500,
-                    sentiment_intensity: {
-                      positive: 0.7,
-                      negative: 0.05,
-                      neutral: 0.25,
-                    },
-                  },
-                },
-              },
-
-              nd_config: {
-                _id: "nd_config",
-                step_name: "Feature Config",
-                x: 1020,
-                y: 180,
-                links: {
-                  nd_api_keys: {
-                    source_id: "nd_config",
-                    target_id: "nd_api_keys",
-                    user_traffic: 18200,
-                    sentiment_intensity: {
-                      positive: 0.4,
-                      negative: 0.3,
-                      neutral: 0.3,
-                    },
-                    insight_label: "Schema validation complexity",
-                  },
-
-                  nd_templates: {
-                    source_id: "nd_config",
-                    target_id: "nd_templates",
-                    user_traffic: 4200,
-                    sentiment_intensity: {
-                      positive: 0.82,
-                      negative: 0.04,
-                      neutral: 0.14,
-                    },
-                    insight_label: "Users adopting preset templates",
-                  },
-                },
-              },
-
-              nd_templates: {
-                _id: "nd_templates",
-                step_name: "Templates",
-                x: 1260,
-                y: 100,
-                links: {
-                  nd_dash: {
-                    source_id: "nd_templates",
-                    target_id: "nd_dash",
-                    user_traffic: 3900,
+                  step3: {
+                    source_id: "step2",
+                    target_id: "step3",
+                    user_traffic: 85,
                     sentiment_intensity: {
                       positive: 0.9,
-                      negative: 0.01,
-                      neutral: 0.09,
+                      negative: 0.05,
+                      neutral: 0.05,
                     },
                   },
                 },
               },
-
-              nd_api_keys: {
-                _id: "nd_api_keys",
-                step_name: "API Credentials",
-                x: 1260,
-                y: 260,
+              step3: {
+                _id: "step3",
+                step_name: "Treatment Execution",
+                x: 60,
+                y: 50,
+                insight_label: "Sincere approach",
                 links: {
-                  nd_dash: {
-                    source_id: "nd_api_keys",
-                    target_id: "nd_dash",
-                    user_traffic: 15500,
-                    sentiment_intensity: {
-                      positive: 0.92,
-                      negative: 0.01,
-                      neutral: 0.07,
-                    },
-                  },
-                },
-              },
-
-              nd_dash: {
-                _id: "nd_dash",
-                step_name: "Main Dashboard",
-                x: 1520,
-                y: 180,
-                insight_label: "Hub Node",
-                links: {
-                  nd_reporting: {
-                    source_id: "nd_dash",
-                    target_id: "nd_reporting",
-                    user_traffic: 9000,
+                  step4: {
+                    source_id: "step3",
+                    target_id: "step4",
+                    user_traffic: 80,
                     sentiment_intensity: {
                       positive: 0.85,
-                      negative: 0.02,
-                      neutral: 0.13,
-                    },
-                    insight_label: "Primary Utility Path",
-                  },
-
-                  nd_settings: {
-                    source_id: "nd_dash",
-                    target_id: "nd_settings",
-                    user_traffic: 3500,
-                    sentiment_intensity: {
-                      positive: 0.3,
-                      negative: 0.2,
-                      neutral: 0.5,
-                    },
-                  },
-
-                  nd_export: {
-                    source_id: "nd_dash",
-                    target_id: "nd_export",
-                    user_traffic: 3000,
-                    sentiment_intensity: {
-                      positive: 0.6,
                       negative: 0.05,
-                      neutral: 0.35,
+                      neutral: 0.1,
                     },
-                  },
-
-                  nd_ai: {
-                    source_id: "nd_dash",
-                    target_id: "nd_ai",
-                    user_traffic: 7200,
-                    sentiment_intensity: {
-                      positive: 0.95,
-                      negative: 0.01,
-                      neutral: 0.04,
-                    },
-                    insight_label: "AI analytics becoming dominant flow",
                   },
                 },
               },
-
-              nd_reporting: {
-                _id: "nd_reporting",
-                step_name: "Advanced Reporting",
-                x: 1780,
-                y: 60,
-                links: {},
-              },
-
-              nd_ai: {
-                _id: "nd_ai",
-                step_name: "AI Insights",
-                x: 1780,
-                y: 140,
-                links: {},
-              },
-
-              nd_settings: {
-                _id: "nd_settings",
-                step_name: "System Settings",
-                x: 1780,
-                y: 220,
-                links: {},
-              },
-
-              nd_export: {
-                _id: "nd_export",
-                step_name: "Data Export",
-                x: 1780,
-                y: 300,
+              step4: {
+                _id: "step4",
+                step_name: "Post-Care Follow-up",
+                x: 90,
+                y: 50,
+                insight_label: "Loyal Customers",
                 links: {},
               },
             },
@@ -436,1428 +437,48 @@ const VoiceOfCustomer = () => {
         },
         silence_metrics: [
           {
-            feature_name: "SSO Handshake",
-            feedback_frequency: "low",
+            feature_name: "Other",
+            feedback_frequency: "high",
             satisfication_level: "positive",
           },
           {
-            feature_name: "CSV Importer",
-            feedback_frequency: "medium",
-            satisfication_level: "neutral",
-          },
-          {
-            feature_name: "Dark Mode v2",
+            feature_name: "Facial implants",
             feedback_frequency: "low",
             satisfication_level: "positive",
-          },
-          {
-            feature_name: "Legacy PDF Engine",
-            feedback_frequency: "low",
-            satisfication_level: "negative",
           },
         ],
         issues_metrics: [
           {
-            issue_id: "ISS-881",
-            title: "FastAPI Async Worker Starvation",
+            issue_id: "ISSUE-001",
+            title: "Wait Time Feedback",
             status: "resolved",
-            send_custom_email: true,
-            custom_email_subject: "Performance issues resolved",
-            custom_email_recipients: [
-              "pintui@micorza.com",
-              "artic@micorza.com",
-            ],
+            send_custom_email: false,
           },
           {
-            issue_id: "ISS-885",
-            title: "OAuth2 State Mismatch on Mobile",
+            issue_id: "ISSUE-002",
+            title: "Treatment Clarification",
             status: "in_progress",
+            send_custom_email: false,
           },
         ],
         key_insights: [
           {
-            insight_name: "The 'Silence' Opportunity",
+            insight_name: "Doctor Empathy",
             insight_description:
-              "Audit logs have zero feedback but 100% enterprise usage; candidate for expansion.",
+              "Patients consistently highlight Dr. Prachi's empathetic and attentive approach during consultations.",
           },
           {
-            insight_name: "API Value Prop",
+            insight_name: "Trust & Professionalism",
             insight_description:
-              "Users connecting API keys show a 5.5x higher LTV than UI-only users.",
+              "Reviews emphasize the sincere and trustworthy nature of the skin treatments provided.",
           },
         ],
         voc_digest:
-          "Global health is robust. Sentiment velocity is at a 12-month peak following the FastAPI optimizations and SSO stability fixes.",
-      },
-      companies: {
-        micorza_ent: {
-          company_id: "micorza_ent",
-          company_name: "Micorza Enterprises",
-          data: {
-            sentiment_velocity: [
-              {
-                month_year: "Mar 2026",
-                net_sentiment: 15.0,
-              },
-              {
-                month_year: "Apr 2026",
-                net_sentiment: 28.4,
-              },
-              {
-                month_year: "May 2026",
-                net_sentiment: 41.2,
-              },
-            ],
-            journey_heatmap: {
-              stages: [
-                {
-                  stage_name: "Portfolio Entry",
-                  nodes: ["nd_ent_portal", "nd_ent_help", "nd_ent_auth"],
-                },
-
-                {
-                  stage_name: "Workspace Selection",
-                  nodes: ["nd_ent_switcher", "nd_ent_recent"],
-                },
-
-                {
-                  stage_name: "Navigation",
-                  nodes: ["nd_ent_collection", "nd_ent_ask", "nd_ent_admin"],
-                },
-              ],
-              journey: {
-                order: [
-                  "nd_ent_portal",
-                  "nd_ent_help",
-                  "nd_ent_auth",
-                  "nd_ent_switcher",
-                  "nd_ent_recent",
-                  "nd_ent_collection",
-                  "nd_ent_ask",
-                  "nd_ent_admin",
-                ],
-                nodes: {
-                  nd_ent_portal: {
-                    _id: "nd_ent_portal",
-                    step_name: "Enterprise Portal",
-                    x: 80,
-                    y: 180,
-                    links: {
-                      nd_ent_auth: {
-                        source_id: "nd_ent_portal",
-                        target_id: "nd_ent_auth",
-                        user_traffic: 12000,
-                        sentiment_intensity: {
-                          positive: 0.8,
-                          negative: 0.05,
-                          neutral: 0.15,
-                        },
-                      },
-
-                      nd_ent_help: {
-                        source_id: "nd_ent_portal",
-                        target_id: "nd_ent_help",
-                        user_traffic: 2500,
-                        sentiment_intensity: {
-                          positive: 0.55,
-                          negative: 0.15,
-                          neutral: 0.3,
-                        },
-                        insight_label: "Users reviewing onboarding docs",
-                      },
-                    },
-                  },
-
-                  nd_ent_help: {
-                    _id: "nd_ent_help",
-                    step_name: "Help Center",
-                    x: 320,
-                    y: 80,
-                    links: {
-                      nd_ent_auth: {
-                        source_id: "nd_ent_help",
-                        target_id: "nd_ent_auth",
-                        user_traffic: 2100,
-                        sentiment_intensity: {
-                          positive: 0.72,
-                          negative: 0.08,
-                          neutral: 0.2,
-                        },
-                      },
-                    },
-                  },
-
-                  nd_ent_auth: {
-                    _id: "nd_ent_auth",
-                    step_name: "SSO Handshake",
-                    x: 320,
-                    y: 220,
-                    links: {
-                      nd_ent_switcher: {
-                        source_id: "nd_ent_auth",
-                        target_id: "nd_ent_switcher",
-                        user_traffic: 11500,
-                        sentiment_intensity: {
-                          positive: 0.9,
-                          negative: 0.01,
-                          neutral: 0.09,
-                        },
-                      },
-
-                      nd_ent_recent: {
-                        source_id: "nd_ent_auth",
-                        target_id: "nd_ent_recent",
-                        user_traffic: 3500,
-                        sentiment_intensity: {
-                          positive: 0.85,
-                          negative: 0.02,
-                          neutral: 0.13,
-                        },
-                        insight_label: "Returning users accessing recents",
-                      },
-                    },
-                  },
-
-                  nd_ent_switcher: {
-                    _id: "nd_ent_switcher",
-                    step_name: "App Selection Hub",
-                    x: 620,
-                    y: 140,
-                    links: {
-                      nd_ent_collection: {
-                        source_id: "nd_ent_switcher",
-                        target_id: "nd_ent_collection",
-                        user_traffic: 6200,
-                        sentiment_intensity: {
-                          positive: 0.88,
-                          negative: 0.02,
-                          neutral: 0.1,
-                        },
-                      },
-
-                      nd_ent_ask: {
-                        source_id: "nd_ent_switcher",
-                        target_id: "nd_ent_ask",
-                        user_traffic: 5100,
-                        sentiment_intensity: {
-                          positive: 0.95,
-                          negative: 0.01,
-                          neutral: 0.04,
-                        },
-                      },
-                    },
-                  },
-
-                  nd_ent_recent: {
-                    _id: "nd_ent_recent",
-                    step_name: "Recent Workspaces",
-                    x: 620,
-                    y: 280,
-                    links: {
-                      nd_ent_admin: {
-                        source_id: "nd_ent_recent",
-                        target_id: "nd_ent_admin",
-                        user_traffic: 2600,
-                        sentiment_intensity: {
-                          positive: 0.72,
-                          negative: 0.08,
-                          neutral: 0.2,
-                        },
-                      },
-                    },
-                  },
-
-                  nd_ent_collection: {
-                    _id: "nd_ent_collection",
-                    step_name: "Collection Micorza",
-                    x: 920,
-                    y: 100,
-                    links: {},
-                  },
-
-                  nd_ent_ask: {
-                    _id: "nd_ent_ask",
-                    step_name: "Ask Micorza",
-                    x: 920,
-                    y: 180,
-                    links: {},
-                  },
-
-                  nd_ent_admin: {
-                    _id: "nd_ent_admin",
-                    step_name: "Admin Controls",
-                    x: 920,
-                    y: 280,
-                    links: {},
-                  },
-                },
-              },
-            },
-            silence_metrics: [
-              {
-                feature_name: "Admin Audit Logs",
-                feedback_frequency: "low",
-                satisfication_level: "positive",
-              },
-              {
-                feature_name: "Billing Dashboard",
-                feedback_frequency: "medium",
-                satisfication_level: "neutral",
-              },
-            ],
-            issues_metrics: [
-              {
-                issue_id: "ISS-ENT-101",
-                title: "LDAP Sync Latency",
-                status: "resolved",
-              },
-            ],
-            key_insights: [
-              {
-                insight_name: "SSO Adoption",
-                insight_description:
-                  "98% of Enterprise users are now utilizing the centralized SSO flow.",
-              },
-            ],
-            voc_digest:
-              "Enterprise-specific nodes show extremely high affinity for 'Ask Micorza' RAG features and seamless SSO transitions.",
-          },
-          products: {
-            prod_collection: {
-              product_id: "prod_collection",
-              product_name: "Collection Micorza",
-              data: {
-                sentiment_velocity: [
-                  {
-                    month_year: "Mar 2026",
-                    net_sentiment: 12.0,
-                  },
-                  {
-                    month_year: "Apr 2026",
-                    net_sentiment: 32.5,
-                  },
-                  {
-                    month_year: "May 2026",
-                    net_sentiment: 48.5,
-                  },
-                ],
-                journey_heatmap: {
-                  stages: [
-                    {
-                      stage_name: "Ingestion",
-                      nodes: ["nd_col_upload", "nd_col_manual", "nd_col_parse"],
-                    },
-
-                    {
-                      stage_name: "Processing",
-                      nodes: ["nd_col_retry", "nd_col_async"],
-                    },
-
-                    {
-                      stage_name: "Delivery",
-                      nodes: ["nd_col_export", "nd_col_analytics"],
-                    },
-                  ],
-
-                  journey: {
-                    order: [
-                      "nd_col_upload",
-                      "nd_col_manual",
-                      "nd_col_parse",
-                      "nd_col_retry",
-                      "nd_col_async",
-                      "nd_col_export",
-                      "nd_col_analytics",
-                    ],
-
-                    nodes: {
-                      nd_col_upload: {
-                        _id: "nd_col_upload",
-                        step_name: "Bulk Upload",
-                        x: 80,
-                        y: 180,
-
-                        links: {
-                          nd_col_parse: {
-                            source_id: "nd_col_upload",
-                            target_id: "nd_col_parse",
-                            user_traffic: 8000,
-
-                            sentiment_intensity: {
-                              positive: 0.75,
-                              negative: 0.1,
-                              neutral: 0.15,
-                            },
-                          },
-
-                          nd_col_manual: {
-                            source_id: "nd_col_upload",
-                            target_id: "nd_col_manual",
-                            user_traffic: 2200,
-
-                            sentiment_intensity: {
-                              positive: 0.55,
-                              negative: 0.18,
-                              neutral: 0.27,
-                            },
-
-                            insight_label: "Manual validation fallback usage",
-                          },
-                        },
-                      },
-
-                      nd_col_manual: {
-                        _id: "nd_col_manual",
-                        step_name: "Manual Review",
-                        x: 320,
-                        y: 80,
-
-                        links: {
-                          nd_col_parse: {
-                            source_id: "nd_col_manual",
-                            target_id: "nd_col_parse",
-                            user_traffic: 1800,
-
-                            sentiment_intensity: {
-                              positive: 0.62,
-                              negative: 0.12,
-                              neutral: 0.26,
-                            },
-                          },
-                        },
-                      },
-
-                      nd_col_parse: {
-                        _id: "nd_col_parse",
-                        step_name: "Pydantic Parsing",
-                        x: 420,
-                        y: 220,
-
-                        links: {
-                          nd_col_async: {
-                            source_id: "nd_col_parse",
-                            target_id: "nd_col_async",
-                            user_traffic: 7800,
-
-                            sentiment_intensity: {
-                              positive: 0.9,
-                              negative: 0.05,
-                              neutral: 0.05,
-                            },
-
-                            insight_label:
-                              "Significant speed improvement in v2",
-                          },
-
-                          nd_col_retry: {
-                            source_id: "nd_col_parse",
-                            target_id: "nd_col_retry",
-                            user_traffic: 1200,
-
-                            sentiment_intensity: {
-                              positive: 0.25,
-                              negative: 0.52,
-                              neutral: 0.23,
-                            },
-
-                            insight_label: "Schema mismatch retry path",
-                          },
-                        },
-                      },
-
-                      nd_col_retry: {
-                        _id: "nd_col_retry",
-                        step_name: "Retry Queue",
-                        x: 620,
-                        y: 320,
-
-                        links: {
-                          nd_col_async: {
-                            source_id: "nd_col_retry",
-                            target_id: "nd_col_async",
-                            user_traffic: 900,
-
-                            sentiment_intensity: {
-                              positive: 0.45,
-                              negative: 0.22,
-                              neutral: 0.33,
-                            },
-                          },
-                        },
-                      },
-
-                      nd_col_async: {
-                        _id: "nd_col_async",
-                        step_name: "Async Task Queue",
-                        x: 620,
-                        y: 180,
-
-                        links: {
-                          nd_col_export: {
-                            source_id: "nd_col_async",
-                            target_id: "nd_col_export",
-                            user_traffic: 7500,
-
-                            sentiment_intensity: {
-                              positive: 0.85,
-                              negative: 0.02,
-                              neutral: 0.13,
-                            },
-                          },
-
-                          nd_col_analytics: {
-                            source_id: "nd_col_async",
-                            target_id: "nd_col_analytics",
-                            user_traffic: 3400,
-
-                            sentiment_intensity: {
-                              positive: 0.91,
-                              negative: 0.01,
-                              neutral: 0.08,
-                            },
-
-                            insight_label: "Analytics usage increasing rapidly",
-                          },
-                        },
-                      },
-
-                      nd_col_export: {
-                        _id: "nd_col_export",
-                        step_name: "Final Export",
-                        x: 920,
-                        y: 120,
-                        links: {},
-                      },
-
-                      nd_col_analytics: {
-                        _id: "nd_col_analytics",
-                        step_name: "Analytics Dashboard",
-                        x: 920,
-                        y: 240,
-                        links: {},
-                      },
-                    },
-                  },
-                },
-                silence_metrics: [
-                  {
-                    feature_name: "Bulk Fetch",
-                    feedback_frequency: "low",
-                    satisfication_level: "positive",
-                  },
-                  {
-                    feature_name: "Schema Mapping",
-                    feedback_frequency: "medium",
-                    satisfication_level: "neutral",
-                  },
-                ],
-                issues_metrics: [
-                  {
-                    issue_id: "ISS-901",
-                    title: "Memory leak in large payload parsing",
-                    status: "resolved",
-                    send_custom_email: true,
-                    custom_email_subject: "Performance Patch: Large Files",
-                  },
-                ],
-                key_insights: [
-                  {
-                    insight_name: "Efficiency Gains",
-                    insight_description:
-                      "Async batching reduced processing time by 65% for datasets over 100MB.",
-                  },
-                ],
-                voc_digest:
-                  "Highest performing product in the suite for Q2 2026. Stability is the key driver of positive mentions.",
-              },
-            },
-            prod_ask: {
-              product_id: "prod_ask",
-              product_name: "Ask Micorza",
-              data: {
-                sentiment_velocity: [
-                  {
-                    month_year: "Mar 2026",
-                    net_sentiment: 10.2,
-                  },
-                  {
-                    month_year: "Apr 2026",
-                    net_sentiment: 22.0,
-                  },
-                  {
-                    month_year: "May 2026",
-                    net_sentiment: 35.0,
-                  },
-                ],
-                journey_heatmap: {
-                  stages: [
-                    {
-                      stage_name: "Query",
-                      nodes: [
-                        "nd_ask_input",
-                        "nd_ask_templates",
-                        "nd_ask_search",
-                      ],
-                    },
-
-                    {
-                      stage_name: "Processing",
-                      nodes: ["nd_ask_retry", "nd_ask_gen"],
-                    },
-
-                    {
-                      stage_name: "Validation",
-                      nodes: ["nd_ask_feedback", "nd_ask_citations"],
-                    },
-                  ],
-
-                  journey: {
-                    order: [
-                      "nd_ask_input",
-                      "nd_ask_templates",
-                      "nd_ask_search",
-                      "nd_ask_retry",
-                      "nd_ask_gen",
-                      "nd_ask_feedback",
-                      "nd_ask_citations",
-                    ],
-
-                    nodes: {
-                      nd_ask_input: {
-                        _id: "nd_ask_input",
-                        step_name: "Natural Language Input",
-                        x: 80,
-                        y: 180,
-
-                        links: {
-                          nd_ask_search: {
-                            source_id: "nd_ask_input",
-                            target_id: "nd_ask_search",
-                            user_traffic: 15000,
-
-                            sentiment_intensity: {
-                              positive: 0.85,
-                              negative: 0.05,
-                              neutral: 0.1,
-                            },
-                          },
-
-                          nd_ask_templates: {
-                            source_id: "nd_ask_input",
-                            target_id: "nd_ask_templates",
-                            user_traffic: 4200,
-
-                            sentiment_intensity: {
-                              positive: 0.82,
-                              negative: 0.04,
-                              neutral: 0.14,
-                            },
-
-                            insight_label:
-                              "Prompt templates becoming preferred flow",
-                          },
-                        },
-                      },
-
-                      nd_ask_templates: {
-                        _id: "nd_ask_templates",
-                        step_name: "Prompt Templates",
-                        x: 320,
-                        y: 80,
-
-                        links: {
-                          nd_ask_search: {
-                            source_id: "nd_ask_templates",
-                            target_id: "nd_ask_search",
-                            user_traffic: 3900,
-
-                            sentiment_intensity: {
-                              positive: 0.91,
-                              negative: 0.01,
-                              neutral: 0.08,
-                            },
-                          },
-                        },
-                      },
-
-                      nd_ask_search: {
-                        _id: "nd_ask_search",
-                        step_name: "Semantic RAG Retrieval",
-                        x: 320,
-                        y: 220,
-
-                        links: {
-                          nd_ask_gen: {
-                            source_id: "nd_ask_search",
-                            target_id: "nd_ask_gen",
-                            user_traffic: 14200,
-
-                            sentiment_intensity: {
-                              positive: 0.95,
-                              negative: 0.01,
-                              neutral: 0.04,
-                            },
-
-                            insight_label: "High accuracy retrieval",
-                          },
-
-                          nd_ask_retry: {
-                            source_id: "nd_ask_search",
-                            target_id: "nd_ask_retry",
-                            user_traffic: 1100,
-
-                            sentiment_intensity: {
-                              positive: 0.35,
-                              negative: 0.42,
-                              neutral: 0.23,
-                            },
-
-                            insight_label: "Low confidence retrieval retry",
-                          },
-                        },
-                      },
-
-                      nd_ask_retry: {
-                        _id: "nd_ask_retry",
-                        step_name: "Context Retry",
-                        x: 620,
-                        y: 320,
-
-                        links: {
-                          nd_ask_gen: {
-                            source_id: "nd_ask_retry",
-                            target_id: "nd_ask_gen",
-                            user_traffic: 850,
-
-                            sentiment_intensity: {
-                              positive: 0.55,
-                              negative: 0.18,
-                              neutral: 0.27,
-                            },
-                          },
-                        },
-                      },
-
-                      nd_ask_gen: {
-                        _id: "nd_ask_gen",
-                        step_name: "LLM Generation",
-                        x: 620,
-                        y: 180,
-
-                        links: {
-                          nd_ask_feedback: {
-                            source_id: "nd_ask_gen",
-                            target_id: "nd_ask_feedback",
-                            user_traffic: 13800,
-
-                            sentiment_intensity: {
-                              positive: 0.9,
-                              negative: 0.02,
-                              neutral: 0.08,
-                            },
-                          },
-
-                          nd_ask_citations: {
-                            source_id: "nd_ask_gen",
-                            target_id: "nd_ask_citations",
-                            user_traffic: 5200,
-
-                            sentiment_intensity: {
-                              positive: 0.94,
-                              negative: 0.01,
-                              neutral: 0.05,
-                            },
-
-                            insight_label: "Users validating generated answers",
-                          },
-                        },
-                      },
-
-                      nd_ask_feedback: {
-                        _id: "nd_ask_feedback",
-                        step_name: "User Rating",
-                        x: 920,
-                        y: 120,
-                        links: {},
-                      },
-
-                      nd_ask_citations: {
-                        _id: "nd_ask_citations",
-                        step_name: "Citation Review",
-                        x: 920,
-                        y: 240,
-                        links: {},
-                      },
-                    },
-                  },
-                },
-                silence_metrics: [
-                  {
-                    feature_name: "Semantic Search",
-                    feedback_frequency: "high",
-                    satisfication_level: "positive",
-                  },
-                  {
-                    feature_name: "Citation Tool",
-                    feedback_frequency: "low",
-                    satisfication_level: "positive",
-                  },
-                ],
-                issues_metrics: [
-                  {
-                    issue_id: "ISS-902",
-                    title: "Context window UI warning",
-                    status: "in_progress",
-                  },
-                  {
-                    issue_id: "ISS-905",
-                    title: "Latex rendering in chat",
-                    status: "resolved",
-                  },
-                ],
-                key_insights: [
-                  {
-                    insight_name: "AI Reliability",
-                    insight_description:
-                      "RAG pipeline has reached 99.8% factual accuracy based on internal benchmarks.",
-                  },
-                ],
-                voc_digest:
-                  "Strong growth in AI-driven support tickets usage. The cite-source feature is the most requested 'silent' win.",
-              },
-            },
-          },
-        },
-        micorza_two: {
-          company_id: "micorza_two",
-          company_name: "Micorza Enterprises 2",
-          data: {
-            sentiment_velocity: [
-              {
-                month_year: "Mar 2026",
-                net_sentiment: 25.0,
-              },
-              {
-                month_year: "Apr 2026",
-                net_sentiment: 38.4,
-              },
-              {
-                month_year: "May 2026",
-                net_sentiment: 51.2,
-              },
-            ],
-            journey_heatmap: {
-              stages: [
-                {
-                  stage_name: "Ingestion",
-                  nodes: ["nd_col_upload", "nd_col_manual", "nd_col_parse"],
-                },
-
-                {
-                  stage_name: "Processing",
-                  nodes: ["nd_col_retry", "nd_col_async"],
-                },
-
-                {
-                  stage_name: "Delivery",
-                  nodes: ["nd_col_export", "nd_col_analytics"],
-                },
-              ],
-
-              journey: {
-                order: [
-                  "nd_col_upload",
-                  "nd_col_manual",
-                  "nd_col_parse",
-                  "nd_col_retry",
-                  "nd_col_async",
-                  "nd_col_export",
-                  "nd_col_analytics",
-                ],
-
-                nodes: {
-                  nd_col_upload: {
-                    _id: "nd_col_upload",
-                    step_name: "Bulk Upload",
-                    x: 80,
-                    y: 180,
-
-                    links: {
-                      nd_col_parse: {
-                        source_id: "nd_col_upload",
-                        target_id: "nd_col_parse",
-                        user_traffic: 8000,
-
-                        sentiment_intensity: {
-                          positive: 0.75,
-                          negative: 0.1,
-                          neutral: 0.15,
-                        },
-                      },
-
-                      nd_col_manual: {
-                        source_id: "nd_col_upload",
-                        target_id: "nd_col_manual",
-                        user_traffic: 2200,
-
-                        sentiment_intensity: {
-                          positive: 0.55,
-                          negative: 0.18,
-                          neutral: 0.27,
-                        },
-
-                        insight_label: "Manual validation fallback usage",
-                      },
-                    },
-                  },
-
-                  nd_col_manual: {
-                    _id: "nd_col_manual",
-                    step_name: "Manual Review",
-                    x: 320,
-                    y: 80,
-
-                    links: {
-                      nd_col_parse: {
-                        source_id: "nd_col_manual",
-                        target_id: "nd_col_parse",
-                        user_traffic: 1800,
-
-                        sentiment_intensity: {
-                          positive: 0.62,
-                          negative: 0.12,
-                          neutral: 0.26,
-                        },
-                      },
-                    },
-                  },
-
-                  nd_col_parse: {
-                    _id: "nd_col_parse",
-                    step_name: "Pydantic Parsing",
-                    x: 320,
-                    y: 220,
-
-                    links: {
-                      nd_col_async: {
-                        source_id: "nd_col_parse",
-                        target_id: "nd_col_async",
-                        user_traffic: 7800,
-
-                        sentiment_intensity: {
-                          positive: 0.9,
-                          negative: 0.05,
-                          neutral: 0.05,
-                        },
-
-                        insight_label: "Significant speed improvement in v2",
-                      },
-
-                      nd_col_retry: {
-                        source_id: "nd_col_parse",
-                        target_id: "nd_col_retry",
-                        user_traffic: 1200,
-
-                        sentiment_intensity: {
-                          positive: 0.25,
-                          negative: 0.52,
-                          neutral: 0.23,
-                        },
-
-                        insight_label: "Schema mismatch retry path",
-                      },
-                    },
-                  },
-
-                  nd_col_retry: {
-                    _id: "nd_col_retry",
-                    step_name: "Retry Queue",
-                    x: 620,
-                    y: 320,
-
-                    links: {
-                      nd_col_async: {
-                        source_id: "nd_col_retry",
-                        target_id: "nd_col_async",
-                        user_traffic: 900,
-
-                        sentiment_intensity: {
-                          positive: 0.45,
-                          negative: 0.22,
-                          neutral: 0.33,
-                        },
-                      },
-                    },
-                  },
-
-                  nd_col_async: {
-                    _id: "nd_col_async",
-                    step_name: "Async Task Queue",
-                    x: 620,
-                    y: 180,
-
-                    links: {
-                      nd_col_export: {
-                        source_id: "nd_col_async",
-                        target_id: "nd_col_export",
-                        user_traffic: 7500,
-
-                        sentiment_intensity: {
-                          positive: 0.85,
-                          negative: 0.02,
-                          neutral: 0.13,
-                        },
-                      },
-
-                      nd_col_analytics: {
-                        source_id: "nd_col_async",
-                        target_id: "nd_col_analytics",
-                        user_traffic: 3400,
-
-                        sentiment_intensity: {
-                          positive: 0.91,
-                          negative: 0.01,
-                          neutral: 0.08,
-                        },
-
-                        insight_label: "Analytics usage increasing rapidly",
-                      },
-                    },
-                  },
-
-                  nd_col_export: {
-                    _id: "nd_col_export",
-                    step_name: "Final Export",
-                    x: 920,
-                    y: 120,
-                    links: {},
-                  },
-
-                  nd_col_analytics: {
-                    _id: "nd_col_analytics",
-                    step_name: "Analytics Dashboard",
-                    x: 920,
-                    y: 240,
-                    links: {},
-                  },
-                },
-              },
-            },
-            silence_metrics: [
-              {
-                feature_name: "Admin Audit Logs",
-                feedback_frequency: "low",
-                satisfication_level: "positive",
-              },
-              {
-                feature_name: "Billing Dashboard",
-                feedback_frequency: "medium",
-                satisfication_level: "neutral",
-              },
-            ],
-            issues_metrics: [
-              {
-                issue_id: "ISS-ENT-101",
-                title: "LDAP Sync Latency",
-                status: "resolved",
-              },
-            ],
-            key_insights: [
-              {
-                insight_name: "SSO Adoption",
-                insight_description:
-                  "98% of Enterprise users are now utilizing the centralized SSO flow.",
-              },
-            ],
-            voc_digest:
-              "Enterprise-specific nodes show extremely high affinity for 'Ask Micorza' RAG features and seamless SSO transitions.",
-          },
-          products: {
-            demo_collection: {
-              product_id: "demo_collection",
-              product_name: "Demo Collection Micorza",
-              data: {
-                sentiment_velocity: [
-                  {
-                    month_year: "Mar 2026",
-                    net_sentiment: 12.0,
-                  },
-                  {
-                    month_year: "Apr 2026",
-                    net_sentiment: 32.5,
-                  },
-                  {
-                    month_year: "May 2026",
-                    net_sentiment: 48.5,
-                  },
-                ],
-                journey_heatmap: {
-                  stages: [
-                    {
-                      stage_name: "Query",
-                      nodes: [
-                        "nd_ask_input",
-                        "nd_ask_templates",
-                        "nd_ask_search",
-                      ],
-                    },
-
-                    {
-                      stage_name: "Processing",
-                      nodes: ["nd_ask_retry", "nd_ask_gen"],
-                    },
-
-                    {
-                      stage_name: "Validation",
-                      nodes: ["nd_ask_feedback", "nd_ask_citations"],
-                    },
-                  ],
-
-                  journey: {
-                    order: [
-                      "nd_ask_input",
-                      "nd_ask_templates",
-                      "nd_ask_search",
-                      "nd_ask_retry",
-                      "nd_ask_gen",
-                      "nd_ask_feedback",
-                      "nd_ask_citations",
-                    ],
-
-                    nodes: {
-                      nd_ask_input: {
-                        _id: "nd_ask_input",
-                        step_name: "Natural Language Input",
-                        x: 80,
-                        y: 180,
-
-                        links: {
-                          nd_ask_search: {
-                            source_id: "nd_ask_input",
-                            target_id: "nd_ask_search",
-                            user_traffic: 15000,
-
-                            sentiment_intensity: {
-                              positive: 0.85,
-                              negative: 0.05,
-                              neutral: 0.1,
-                            },
-                          },
-
-                          nd_ask_templates: {
-                            source_id: "nd_ask_input",
-                            target_id: "nd_ask_templates",
-                            user_traffic: 4200,
-
-                            sentiment_intensity: {
-                              positive: 0.82,
-                              negative: 0.04,
-                              neutral: 0.14,
-                            },
-
-                            insight_label:
-                              "Prompt templates becoming preferred flow",
-                          },
-                        },
-                      },
-
-                      nd_ask_templates: {
-                        _id: "nd_ask_templates",
-                        step_name: "Prompt Templates",
-                        x: 320,
-                        y: 80,
-
-                        links: {
-                          nd_ask_search: {
-                            source_id: "nd_ask_templates",
-                            target_id: "nd_ask_search",
-                            user_traffic: 3900,
-
-                            sentiment_intensity: {
-                              positive: 0.91,
-                              negative: 0.01,
-                              neutral: 0.08,
-                            },
-                          },
-                        },
-                      },
-
-                      nd_ask_search: {
-                        _id: "nd_ask_search",
-                        step_name: "Semantic RAG Retrieval",
-                        x: 320,
-                        y: 220,
-
-                        links: {
-                          nd_ask_gen: {
-                            source_id: "nd_ask_search",
-                            target_id: "nd_ask_gen",
-                            user_traffic: 14200,
-
-                            sentiment_intensity: {
-                              positive: 0.95,
-                              negative: 0.01,
-                              neutral: 0.04,
-                            },
-
-                            insight_label: "High accuracy retrieval",
-                          },
-
-                          nd_ask_retry: {
-                            source_id: "nd_ask_search",
-                            target_id: "nd_ask_retry",
-                            user_traffic: 1100,
-
-                            sentiment_intensity: {
-                              positive: 0.35,
-                              negative: 0.42,
-                              neutral: 0.23,
-                            },
-
-                            insight_label: "Low confidence retrieval retry",
-                          },
-                        },
-                      },
-
-                      nd_ask_retry: {
-                        _id: "nd_ask_retry",
-                        step_name: "Context Retry",
-                        x: 620,
-                        y: 320,
-
-                        links: {
-                          nd_ask_gen: {
-                            source_id: "nd_ask_retry",
-                            target_id: "nd_ask_gen",
-                            user_traffic: 850,
-
-                            sentiment_intensity: {
-                              positive: 0.55,
-                              negative: 0.18,
-                              neutral: 0.27,
-                            },
-                          },
-                        },
-                      },
-
-                      nd_ask_gen: {
-                        _id: "nd_ask_gen",
-                        step_name: "LLM Generation",
-                        x: 620,
-                        y: 180,
-
-                        links: {
-                          nd_ask_feedback: {
-                            source_id: "nd_ask_gen",
-                            target_id: "nd_ask_feedback",
-                            user_traffic: 13800,
-
-                            sentiment_intensity: {
-                              positive: 0.9,
-                              negative: 0.02,
-                              neutral: 0.08,
-                            },
-                          },
-
-                          nd_ask_citations: {
-                            source_id: "nd_ask_gen",
-                            target_id: "nd_ask_citations",
-                            user_traffic: 5200,
-
-                            sentiment_intensity: {
-                              positive: 0.94,
-                              negative: 0.01,
-                              neutral: 0.05,
-                            },
-
-                            insight_label: "Users validating generated answers",
-                          },
-                        },
-                      },
-
-                      nd_ask_feedback: {
-                        _id: "nd_ask_feedback",
-                        step_name: "User Rating",
-                        x: 920,
-                        y: 120,
-                        links: {},
-                      },
-
-                      nd_ask_citations: {
-                        _id: "nd_ask_citations",
-                        step_name: "Citation Review",
-                        x: 920,
-                        y: 240,
-                        links: {},
-                      },
-                    },
-                  },
-                },
-                silence_metrics: [
-                  {
-                    feature_name: "Bulk Fetch",
-                    feedback_frequency: "low",
-                    satisfication_level: "positive",
-                  },
-                  {
-                    feature_name: "Schema Mapping",
-                    feedback_frequency: "medium",
-                    satisfication_level: "neutral",
-                  },
-                ],
-                issues_metrics: [
-                  {
-                    issue_id: "ISS-901",
-                    title: "Memory leak in large payload parsing",
-                    status: "resolved",
-                    send_custom_email: true,
-                    custom_email_subject: "Performance Patch: Large Files",
-                  },
-                ],
-                key_insights: [
-                  {
-                    insight_name: "Efficiency Gains",
-                    insight_description:
-                      "Async batching reduced processing time by 65% for datasets over 100MB.",
-                  },
-                ],
-                voc_digest:
-                  "Highest performing product in the suite for Q2 2026. Stability is the key driver of positive mentions.",
-              },
-            },
-            demo_ask: {
-              product_id: "demo_ask",
-              product_name: "Demo Ask Micorza",
-              data: {
-                sentiment_velocity: [
-                  {
-                    month_year: "Mar 2026",
-                    net_sentiment: 10.2,
-                  },
-                  {
-                    month_year: "Apr 2026",
-                    net_sentiment: 22.0,
-                  },
-                  {
-                    month_year: "May 2026",
-                    net_sentiment: 35.0,
-                  },
-                ],
-                journey_heatmap: {
-                  stages: [
-                    {
-                      stage_name: "Query",
-                      nodes: ["nd_ask_input", "nd_ask_search"],
-                    },
-                    {
-                      stage_name: "Response",
-                      nodes: ["nd_ask_gen", "nd_ask_feedback"],
-                    },
-                  ],
-                  journey: {
-                    order: [
-                      "nd_ask_input",
-                      "nd_ask_search",
-                      "nd_ask_gen",
-                      "nd_ask_feedback",
-                    ],
-                    nodes: {
-                      nd_ask_input: {
-                        _id: "nd_ask_input",
-                        step_name: "Natural Language Input",
-                        links: {
-                          nd_ask_search: {
-                            source_id: "nd_ask_input",
-                            target_id: "nd_ask_search",
-                            user_traffic: 15000,
-                            sentiment_intensity: {
-                              positive: 0.85,
-                              negative: 0.05,
-                              neutral: 0.1,
-                            },
-                          },
-                        },
-                      },
-                      nd_ask_search: {
-                        _id: "nd_ask_search",
-                        step_name: "Semantic RAG Retrieval",
-                        links: {
-                          nd_ask_gen: {
-                            source_id: "nd_ask_search",
-                            target_id: "nd_ask_gen",
-                            user_traffic: 14200,
-                            sentiment_intensity: {
-                              positive: 0.95,
-                              negative: 0.01,
-                              neutral: 0.04,
-                            },
-                            insight_label: "High accuracy retrieval",
-                          },
-                        },
-                      },
-                      nd_ask_gen: {
-                        _id: "nd_ask_gen",
-                        step_name: "LLM Generation",
-                        links: {
-                          nd_ask_feedback: {
-                            source_id: "nd_ask_gen",
-                            target_id: "nd_ask_feedback",
-                            user_traffic: 13800,
-                            sentiment_intensity: {
-                              positive: 0.9,
-                              negative: 0.02,
-                              neutral: 0.08,
-                            },
-                          },
-                        },
-                      },
-                      nd_ask_feedback: {
-                        _id: "nd_ask_feedback",
-                        step_name: "User Rating",
-                        links: {},
-                      },
-                    },
-                  },
-                },
-                silence_metrics: [
-                  {
-                    feature_name: "Semantic Search",
-                    feedback_frequency: "high",
-                    satisfication_level: "positive",
-                  },
-                  {
-                    feature_name: "Citation Tool",
-                    feedback_frequency: "low",
-                    satisfication_level: "positive",
-                  },
-                ],
-                issues_metrics: [
-                  {
-                    issue_id: "ISS-902",
-                    title: "Context window UI warning",
-                    status: "in_progress",
-                  },
-                  {
-                    issue_id: "ISS-905",
-                    title: "Latex rendering in chat",
-                    status: "resolved",
-                  },
-                ],
-                key_insights: [
-                  {
-                    insight_name: "AI Reliability",
-                    insight_description:
-                      "RAG pipeline has reached 99.8% factual accuracy based on internal benchmarks.",
-                  },
-                ],
-                voc_digest:
-                  "Strong growth in AI-driven support tickets usage. The cite-source feature is the most requested 'silent' win.",
-              },
-            },
-          },
-        },
+          "The Esthetics Clinical Care Center in Pune, led by Dr. Prachi Chhindam, shows exceptionally high patient satisfaction (Net Sentiment ~100%). Patients value the personalized care at Goodwill Square Mall clinic. Feedback suggests high trust in facio-maxillary and cosmetic procedures.",
       },
     },
+    created_at: "2026-05-13T08:06:54.769844",
+    comments: [],
   };
 
   const [selectedCompanies, setSelectedCompanies] = React.useState<string[]>(
@@ -1908,7 +529,7 @@ const VoiceOfCustomer = () => {
 
             <div>
               <Popover>
-                <PopoverTrigger className="w-30 text-xs font-semibold p-2.5 flex items-center gap-1 border rounded-md bg-background/80 hover:bg-background">
+                <PopoverTrigger className="w-max text-xs font-semibold p-2.5 flex items-center gap-1 border rounded-md bg-background/80 hover:bg-background">
                   {selectedCompanies.length === 0 && "Select Companies"}
                   {selectedCompanies.length === 1 &&
                     Object.values(data.dashboard.companies).find(
@@ -1959,7 +580,7 @@ const VoiceOfCustomer = () => {
 
             <div>
               <Popover>
-                <PopoverTrigger className="w-30 text-xs font-semibold p-2.5 flex items-center gap-1 border rounded-md bg-background/80 hover:bg-background">
+                <PopoverTrigger className="w-max text-xs font-semibold p-2.5 flex items-center gap-1 border rounded-md bg-background/80 hover:bg-background">
                   {selectedProducts.length === 0 && "Select Products"}
                   {selectedProducts.length === 1 &&
                     Object.values(data.dashboard.companies)
