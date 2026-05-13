@@ -134,6 +134,7 @@ export default function net_sentimentGraph({
               dataKey="month_year"
               tick={{ fontSize: 12, fill: "#374151" }}
               axisLine={false}
+              padding={{ left: 25,  right: 20 }}
               tickLine={false}
             />
 
